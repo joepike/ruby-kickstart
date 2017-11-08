@@ -21,8 +21,27 @@
 # f.to_f               # => 0.5
 
 class Fraction
+  attr_accessor :num, :den
   def gcd(a,b)
     return a if b == 0
-    gcd(b, a%b)
+    gcd b, (a%b)
+  end
+  
+  def initialize(a, b)
+     self.num = a
+     self.den = b
+  end
+  
+  def to_f
+    num / den.to_f
+  end
+  
+  def to_s
+    "#{num}/#{den}"
+  end
+  
+  def lowest
+    divisor = gcd(num, den)
+    Fraction.new(num/divisor, den/divisor)
   end
 end

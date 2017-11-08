@@ -8,3 +8,12 @@
 # alternate_words("Lorem ipsum dolor sit amet.")  # => ["Lorem", "dolor", "amet"]
 # alternate_words("Can't we all get along?")      # => ["Can't", "all", "along"]
 # alternate_words("Elementary, my dear Watson!")  # => ["Elementary", "dear"]
+
+def every_other_word(string)
+    words = string.split
+    return_string = []
+    word.each_with_index do |word, index|
+        return_string << word if index.even?
+    end
+    return_string
+end

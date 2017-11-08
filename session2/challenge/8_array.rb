@@ -5,3 +5,13 @@
 # got_three? ['a', 'a', 'b']  # => false
 # got_three? ['a', 'a', 'a']  # => true
 # got_three? [1, 2, 1, 1]     # => false
+
+
+def got_three?(arr)
+    arr.each_with_index do |char, index|
+        return true if arr[index] == arr[index+1] && arr[index+1] == arr[index+2]
+    end        
+    false
+end
+        
+    
