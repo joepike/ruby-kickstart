@@ -17,3 +17,20 @@
 # match_maker true,  true,  true, true, nil     # => [false, true]
 # match_maker true,  true,  true, 0, nil        # => [false, true]
 
+def match_maker(bool, *elements)
+    return_arr = []
+    elements.each_slice 2 do |a, b|
+        if a == b && bool
+            return_arr << 'false'
+        elsif a == b && bool == false
+            return_arr << 'true'
+        elsif a != b && bool 
+            return_arr << 'true'
+        elsif a != b && bool == false
+            return_arr << 'true'
+        end
+    end
+    return_arr
+end          
+            
+        

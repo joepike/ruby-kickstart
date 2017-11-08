@@ -8,3 +8,14 @@
 # staircase 4  # => {1 => [], 3 => [2]}
 # staircase 5  # => {1 => [], 3 => [2], 5 =>[2, 4]}
 
+def create_hash(int)
+    new_hash = {}
+    1.upto int do |size|
+        next if size.even?
+        arr = Array.new(size) {|n| n + 1 }
+        even_arr = arr.select {|n| n.even? }
+        new_hash[size] = even_arr
+    end
+    new_hash
+end
+

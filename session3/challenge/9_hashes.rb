@@ -29,4 +29,20 @@
 # shared [1,2,3], [3,2,1]            # => [{1=>[true, true], 2=>[true, true], 3=>[true, true]}, [1, 2, 3]]
 
 def shared(a, b)
+    
+    share = {}
+    
+    a.each do |element|
+        share[element] ||= [nil, nil]
+        share[element][0] = true
+    end
+    b.each do |element|
+        share[element] ||= [nil, nil]
+        share[element][1] = true
+    end
+    
+    share_return = share.select {|k, v| value == [true, true]}.map {|k, v| k}
+    
+    return share, share_return.sort
+    
 end
