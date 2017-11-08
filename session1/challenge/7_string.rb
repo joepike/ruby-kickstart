@@ -5,4 +5,7 @@
 # pirates_say_arrrrrrrrr("Pirates say arrrrrrrrr")        # => "arrrrrrrr"
 
 def pirates_say_arrrrrrrrr(string)
+    return_string = []
+    string.split("").each_with_index {|letter, index| return_string << string[index+1] if (letter == 'r' || letter == 'R') }
+    return_string.join("")
 end
